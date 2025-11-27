@@ -1,0 +1,131 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/Parquetry.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/factory/containers/protos/WoodenBox.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/factory/conveyors/protos/ConveyorBelt.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/factory/pallet/protos/WoodenPalletStack.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/factory/pipes/protos/PipeSection.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/factory/manhole/protos/SquareManhole.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/factory/fire_extinguisher/protos/FireExtinguisher.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/solids/protos/SolidBox.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/neuronics/ipr/protos/IprHd6ms90.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/factory/containers/protos/PlasticCrate.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation 0.3128432274943843 0.64725694692512 -0.6951169395634589 1.2151632569837854
+  position -3.087791734438029 6.171923995080327 7.867532098292833
+}
+TexturedBackground {
+  texture "empty_office"
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorSize 8 7
+  floorAppearance Parquetry {
+    type "light strip"
+    colorOverride 0 0 0
+  }
+  wallThickness 0.1
+}
+PlasticCrate {
+  translation 0.55 0.8 0
+  size 0.5 0.5 0.6
+}
+IprHd6ms90 {
+  translation 1.11 0.77 0.62
+  controller "pick_and_place_controller"
+  controllerArgs [
+    ""
+  ]
+  leftGripperSlot [
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 1 0
+        anchor 0 -0.02 0
+        maxStop 0.5
+        springConstant 10
+        dampingConstant 1
+      }
+      device [
+        RotationalMotor {
+          name "leftGripperMotor"
+        }
+      ]
+    }
+    Slot {
+    }
+  ]
+}
+SolidBox {
+  translation 1.15 0.77 0.31
+  name "box(11)"
+  size 0.5 0.4 0.6
+}
+FireExtinguisher {
+  translation 3.7 -3.39 0
+  rotation 0 0 1 2.3562
+}
+WoodenPalletStack {
+  translation -3.19 -3.05 0
+}
+WoodenBox {
+  translation -3.56 3.04 0.3
+}
+WoodenBox {
+  translation -2.86 3.04 0.3
+  name "wooden box(8)"
+}
+WoodenBox {
+  translation -3.56 3.04 0.9
+  name "wooden box(1)"
+}
+WoodenBox {
+  translation -2.9 3.04 0.9
+  name "wooden box(10)"
+}
+WoodenBox {
+  translation -3.56 2.43 0.9
+  name "wooden box(2)"
+}
+WoodenBox {
+  translation -3.56 2.43 1.49
+  name "wooden box(7)"
+}
+WoodenBox {
+  translation -3.56 2.43 0.3
+  name "wooden box(3)"
+}
+WoodenBox {
+  translation -2.9 2.43 0.3
+  name "wooden box(9)"
+}
+WoodenBox {
+  translation -3.56 1.82 0.3
+  name "wooden box(4)"
+}
+WoodenBox {
+  translation -3.56 1.82 0.89
+  name "wooden box(5)"
+}
+WoodenBox {
+  translation -3.56 3.01 1.49
+  name "wooden box(6)"
+}
+ConveyorBelt {
+  translation 2.44 0.27 0
+  size 3 0.4 0.6
+}
+PipeSection {
+  translation 3.82 3.34 1.26
+  height 4
+  radius 0.1
+}
+SquareManhole {
+  translation 3.41 2.91 0
+}
