@@ -1,32 +1,24 @@
-"""pick_and_place_controller controller."""
-
-# You may need to import some classes of the controller module. Ex:
-#  from controller import Robot, Motor, DistanceSensor
 from controller import Robot
 
-# create the Robot instance.
+# create the Robot instance
 robot = Robot()
-
-# get the time step of the current world.
 timestep = int(robot.getBasicTimeStep())
 
-# You should insert a getDevice-like function in order to get the
-# instance of a device of the robot. Something like:
-#  motor = robot.getDevice('motorname')
-#  ds = robot.getDevice('dsname')
-#  ds.enable(timestep)
+# get the motor
+base_motor = robot.getMotor("base")
+base_motor.setPosition(0.1)  # initial position
+base_motor.setVelocity(0.7)  # speed
 
-# Main loop:
-# - perform simulation steps until Webots is stopping the controller
+# test angle positions
+angles = [0.7, -0.8, 1.0, -1.0, 0.0]  # radians
+index = 0
+duration = 1  # steps to wait at each position
+
+counter = 0
+
 while robot.step(timestep) != -1:
-    # Read the sensors:
-    # Enter here functions to read sensor data, like:
-    #  val = ds.getValue()
-
-    # Process sensor data here.
-
-    # Enter here functions to send actuator commands, like:
-    #  motor.setPosition(10.0)
-    pass
-
-# Enter here exit cleanup code.
+    if counter % duration == 0:
+        # move motor to next angle
+        base_motor.setPosition(angles[index])
+        index = (index + 1) % len(angles)
+    counter += 1
