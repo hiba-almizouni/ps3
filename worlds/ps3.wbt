@@ -2,7 +2,7 @@
 
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "../protos/RectangleArena.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/Parquetry.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/factory/containers/protos/WoodenBox.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/factory/conveyors/protos/ConveyorBelt.proto"
@@ -11,15 +11,15 @@ EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/project
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/factory/manhole/protos/SquareManhole.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/factory/fire_extinguisher/protos/FireExtinguisher.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/solids/protos/SolidBox.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/factory/containers/protos/PlasticCrate.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/neuronics/ipr/protos/IprHd6m90.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/toys/protos/RubberDuck.proto"
+EXTERNPROTO "../protos/PlasticCrate.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/neuronics/ipr/protos/IprHd6ms90.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/drinks/protos/Can.proto"
 
 WorldInfo {
 }
 Viewpoint {
-  orientation 0.3070409888135488 -0.4409608487985363 -0.8433737967326663 4.902847420356533
-  position 0.4824006365739042 -8.177349538518422 6.285385673844395
+  orientation -0.09587700743095708 0.001052399862814583 0.9953926320305034 3.119771038652863
+  position 4.903080441125994 -0.08215336986922406 1.1973302249939572
 }
 TexturedBackground {
   texture "empty_office"
@@ -34,22 +34,14 @@ RectangleArena {
   }
   wallThickness 0.1
 }
-IprHd6m90 {
-  translation 1.1611 0.758934 0.655722
-  rotation -0.2588128614803976 1.6436291203109037e-05 0.9659274830245679 0.261804
-  controller "test_motor"
-}
 PlasticCrate {
-  translation 0.55 0.8 0
+  translation 1.61 0.8 0
   size 0.5 0.5 0.6
 }
 SolidBox {
-  translation 1.15 0.77 0.31
+  translation 1.15 0.77 0.1
   name "box(11)"
-  size 0.5 0.4 0.6
-}
-RubberDuck {
-  translation 3.31 0.27 0.62
+  size 0.5 0.4 0.4
 }
 FireExtinguisher {
   translation 3.7 -3.39 0
@@ -102,9 +94,10 @@ WoodenBox {
   name "wooden box(6)"
 }
 ConveyorBelt {
-  translation 2.44 0.27 0
+  translation 2.44 0.3 0
   rotation 0 0 1 3.14159
-  size 3 0.4 0.6
+  size 3 0.2 0.75
+  speed 0.3
 }
 PipeSection {
   translation 3.82 3.34 1.26
@@ -113,4 +106,12 @@ PipeSection {
 }
 SquareManhole {
   translation 3.41 2.91 0
+}
+IprHd6ms90 {
+  translation 1.02686 0.666656 0.27
+  controller "test_motor"
+}
+Can {
+  translation 3.22 0.33 0.81
+  mass 0.3
 }
