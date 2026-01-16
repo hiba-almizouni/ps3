@@ -18,8 +18,8 @@ EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/project
 WorldInfo {
 }
 Viewpoint {
-  orientation 0.18336869231400754 -0.1731359911938284 -0.9676775554038555 4.622212575722678
-  position 0.3791974087462807 -8.450699261244985 4.342501919474286
+  orientation 0.021473450540663422 -0.000590903846338003 0.9997692442531538 3.0864045091834837
+  position 2.190003697937445 0.00402128036031121 0.8727230592737072
 }
 TexturedBackground {
   texture "empty_office"
@@ -97,8 +97,8 @@ SolidBox {
   size 0.5 0.4 1
 }
 FireExtinguisher {
-  translation 3.7000000159413733 -3.389999988079114 -0.004708754041183372
-  rotation 0.0021822799682201747 0.003675635707433997 0.9999908636364065 2.3562064602946786
+  translation 3.27581 -2.96581 -0.00403294
+  rotation 0.002182279968220175 0.0036756357074339977 0.9999908636364067 2.3562064602946786
 }
 WoodenPalletStack {
   translation -3.19 -3.05 0
@@ -180,6 +180,7 @@ UR5e {
           }
         }
       ]
+      name "ds_sensor"
       boundingObject USE sensor
       physics Physics {
       }
@@ -187,6 +188,7 @@ UR5e {
         0 0 0
         1.5 1000 0
       ]
+      type "infra-red"
     }
     Camera {
       translation 0 0.09 0
@@ -207,14 +209,14 @@ DEF TARGET Solid {
         metalness 0
       }
       geometry Box {
-        size 0.12 0.12 0.12
+        size 0.1 0.1 0.1
       }
     }
   ]
   name "cube0(1)"
   contactMaterial "target"
   boundingObject DEF BOUNDING_CUBE Box {
-    size 0.12 0.12 0.12
+    size 0.1 0.1 0.1
   }
   physics DEF PHYSICS_CUBE Physics {
     density -1
@@ -232,14 +234,14 @@ DEF TARGET Solid {
         metalness 0
       }
       geometry Box {
-        size 0.12 0.12 0.12
+        size 0.1 0.1 0.1
       }
     }
   ]
   name "cube0(9)"
   contactMaterial "target"
   boundingObject DEF BOUNDING_CUBE Box {
-    size 0.12 0.12 0.12
+    size 0.1 0.1 0.1
   }
   physics DEF PHYSICS_CUBE Physics {
     density -1
@@ -247,8 +249,8 @@ DEF TARGET Solid {
   }
 }
 DEF TARGET Solid {
-  translation 2.31786 -0.0714398 0.660998
-  rotation 0.9944199401179693 0.10549399364735731 -3.252099804164888e-07 -3.1415853071795863
+  translation 1.75896 -0.0332288 0.650998
+  rotation -0.9996822680520386 0.0252064067587762 8.018772150131388e-07 3.14159
   children [
     DEF CUBE Shape {
       appearance PBRAppearance {
@@ -257,14 +259,39 @@ DEF TARGET Solid {
         metalness 0
       }
       geometry Box {
-        size 0.12 0.12 0.12
+        size 0.1 0.1 0.1
       }
     }
   ]
   name "cube0(2)"
   contactMaterial "target"
   boundingObject DEF BOUNDING_CUBE Box {
-    size 0.12 0.12 0.12
+    size 0.1 0.1 0.1
+  }
+  physics DEF PHYSICS_CUBE Physics {
+    density -1
+    mass 0.03
+  }
+}
+DEF TARGET Solid {
+  translation 2.91861 -0.0717163 0.650998
+  rotation -0.9996822680520386 0.0252064067587762 8.018772150131388e-07 3.14159
+  children [
+    DEF CUBE Shape {
+      appearance PBRAppearance {
+        baseColor 0 1 0
+        roughness 0.365482152
+        metalness 0
+      }
+      geometry Box {
+        size 0.1 0.1 0.1
+      }
+    }
+  ]
+  name "cube0(3)"
+  contactMaterial "target"
+  boundingObject DEF BOUNDING_CUBE Box {
+    size 0.1 0.1 0.1
   }
   physics DEF PHYSICS_CUBE Physics {
     density -1
