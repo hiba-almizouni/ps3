@@ -18,8 +18,8 @@ EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/project
 WorldInfo {
 }
 Viewpoint {
-  orientation 0.2495826044695743 -0.21662619079157175 -0.9438122784798454 4.514238156454427
-  position 1.362628741927726 -7.894782698980931 5.967608240812096
+  orientation 0.18336869231400754 -0.1731359911938284 -0.9676775554038555 4.622212575722678
+  position 0.3791974087462807 -8.450699261244985 4.342501919474286
 }
 TexturedBackground {
   texture "empty_office"
@@ -35,7 +35,7 @@ RectangleArena {
   wallThickness 0.1
 }
 DEF GATE_OUT Solid {
-  translation 2.55 -0.1 0.1
+  translation 2.55 -0.1 0
   rotation 0 0 1 1.5708
   children [
     DEF GATE Group {
@@ -163,7 +163,7 @@ SquareManhole {
 UR5e {
   translation -2.67 0.77 0.6
   rotation 0 0 1 -1.5707953071795862
-  controller "test_motor"
+  controller "ur5_controller"
   toolSlot [
     DistanceSensor {
       translation -1.2479e-07 0.11 6.57353e-08
@@ -202,7 +202,7 @@ DEF TARGET Solid {
   children [
     DEF CUBE Shape {
       appearance PBRAppearance {
-        baseColor 1 0 0
+        baseColor 0 1 0
         roughness 0.365482152
         metalness 0
       }
@@ -227,7 +227,7 @@ DEF TARGET Solid {
   children [
     DEF CUBE Shape {
       appearance PBRAppearance {
-        baseColor 0.8 0.8 0.8
+        baseColor 0 1 0
         roughness 0.365482152
         metalness 0
       }
