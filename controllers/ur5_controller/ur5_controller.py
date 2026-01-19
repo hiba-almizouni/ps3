@@ -7,7 +7,8 @@ import sys
 # ===================== Defines =====================
 TIME_STEP = 32
 GRASP_DISTANCE = 28          # IR sensor threshold (tune)
-GRASP_DELAY_STEPS = int(0.5 / (TIME_STEP / 1000))  # 0.5 sec ≈ 16 steps
+GRASP_DELAY_STEPS = int(1.0 / (TIME_STEP / 1000))  # 0.5 sec ≈ 16 steps
+
 
 # ===================== States =====================
 WAITING = 0
@@ -124,21 +125,27 @@ while robot.step(TIME_STEP) != -1:
         if distance < GRASP_DISTANCE:
             grasp_counter += 1
             print(f"  stable... {grasp_counter}/{GRASP_DELAY_STEPS}")
-
-            if grasp_counter >= GRASP_DELAY_STEPS:
-                print("Object stable -> GRASPING")
-                for m in hand_motors:
-                    m.setPosition(0.85)
-                grasp_counter = 0
-                state = GRASPING
+            print("Object stable -> GRASPING")
+            
+            counter = 0
+            state = GRASPING
         else:
             grasp_counter = 0
 
     elif state == GRASPING:
-        print("Grasp complete -> ROTATING")
-        for i in range(4):
-            ur_motors[i].setPosition(target_positions[i])
-        state = ROTATING
+        counter+=1
+        for m in hand_motors:
+                m.setVelocity(0.8)
+                m.setPosition(0.85)
+        
+        
+        if counter >= GRASP_DELAY_STEPS :
+            print("Grasp complete -> ROTATING")
+            state = ROTATING
+            for m in hand_motors:
+                m.setVelocity(m.getMaxVelocity())
+            for i in range(4):
+                ur_motors[i].setPosition(target_positions[i])
 
     elif state == ROTATING:
         if position < -2.3:

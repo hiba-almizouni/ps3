@@ -18,8 +18,8 @@ EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/project
 WorldInfo {
 }
 Viewpoint {
-  orientation 0.021473450540663422 -0.000590903846338003 0.9997692442531538 3.0864045091834837
-  position 2.190003697937445 0.00402128036031121 0.8727230592737072
+  orientation -0.12574491098107585 0.09450321706826591 0.9875511932685361 1.8646537979908901
+  position 0.006352250589868325 -3.9389537940410992 2.6832207853661263
 }
 TexturedBackground {
   texture "empty_office"
@@ -88,7 +88,7 @@ DEF GATE_OUT Solid {
   name "belt_gate_out"
 }
 PlasticCrate {
-  translation -2.42 1.63 0
+  translation -2.42 1.53 0
   size 0.5 0.5 0.6
 }
 SolidBox {
@@ -199,7 +199,7 @@ UR5e {
   ]
 }
 DEF TARGET Solid {
-  translation 0.43388 -0.054346 0.640998
+  translation -0.0355132 -0.030658 0.640998
   rotation 0.9996822579725891 -0.025206806504731966 -8.116032094379285e-07 -3.1415853071795863
   children [
     DEF CUBE Shape {
@@ -224,7 +224,7 @@ DEF TARGET Solid {
   }
 }
 DEF TARGET Solid {
-  translation 3.86844 -0.0474466 0.660998
+  translation 3.97833 -0.0529906 0.660998
   rotation 0.9996822579725891 -0.025206806504731966 -8.116032094379285e-07 -3.1415853071795863
   children [
     DEF CUBE Shape {
@@ -249,7 +249,7 @@ DEF TARGET Solid {
   }
 }
 DEF TARGET Solid {
-  translation 1.75896 -0.0332288 0.650998
+  translation 1.37686 -0.0640135 0.650998
   rotation -0.9996822680520386 0.0252064067587762 8.018772150131388e-07 3.14159
   children [
     DEF CUBE Shape {
@@ -274,7 +274,7 @@ DEF TARGET Solid {
   }
 }
 DEF TARGET Solid {
-  translation 2.91861 -0.0717163 0.650998
+  translation 2.73879 -0.0626443 0.650998
   rotation -0.9996822680520386 0.0252064067587762 8.018772150131388e-07 3.14159
   children [
     DEF CUBE Shape {
