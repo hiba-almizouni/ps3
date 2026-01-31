@@ -13,13 +13,13 @@ EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/project
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/solids/protos/SolidBox.proto"
 EXTERNPROTO "../protos/PlasticCrate.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/universal_robots/protos/UR5e.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/devices/robotiq/protos/Robotiq3fGripper.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/devices/robotiq/protos/Robotiq2f85Gripper.proto"
 
 WorldInfo {
 }
 Viewpoint {
-  orientation -0.07969014559230062 -0.0026403974992768252 0.9968161861629876 3.207672492628606
-  position 1.2634997485528925 0.2218468169942403 1.5918778773639017
+  orientation -0.16272251360804238 0.17460754664081218 0.9710991649780969 1.529663769981575
+  position -2.222846548520887 -4.8041430003800984 2.5483621595900927
 }
 TexturedBackground {
   texture "empty_office"
@@ -149,7 +149,7 @@ WoodenBox {
 DEF cb ConveyorBelt {
   translation 0.05 -0.039992 0
   rotation 0 0 1 3.14159
-  size 8 0.2 0.59
+  size 8 0.4 0.59
   speed 0
 }
 PipeSection {
@@ -161,13 +161,20 @@ SquareManhole {
   translation 3.41 2.91 0
 }
 UR5e {
+  hidden translation_6 -8.145711739153535e-05 3.87438094238135e-05 0.09998978116356132
+  hidden rotation_6 -0.04402335696019688 -0.7046848745194012 0.7081533532120926 6.322221851853715e-05
   translation -2.67 0.74 0.6
   rotation 0 0 -0.9999999999999999 1.5707953071795862
   controller "ur5_controller"
   supervisor TRUE
   toolSlot [
+    DEF GRIPPER Robotiq2f85Gripper {
+      translation 0 -0.01 -1.01962e-08
+      rotation 1 0 0 -1.5707953071795862
+      name "Gripper"
+    }
     DistanceSensor {
-      translation -1.2479e-07 0.11 6.57353e-08
+      translation 5.19619e-08 0.08 -1.73206e-08
       rotation 0.5773469358518515 0.5773519358512958 -0.5773519358512958 -2.094395307179586
       children [
         DEF sensor Shape {
@@ -217,10 +224,8 @@ UR5e {
       type "infra-red"
     }
     Camera {
-      translation 0 0.09 0
+      translation 3.67321e-08 0.08 0
       rotation 0 0 1 1.5708
-    }
-    Robotiq3fGripper {
     }
   ]
 }
